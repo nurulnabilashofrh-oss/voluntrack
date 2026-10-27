@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================
+   VOLUNTRACK - MODERN INTERACTION
+   ========================================= */
+
+/* Transisi dasar tombol dan CTA */
+button,
+.btn,
+.vt-register,
+.wa-button,
+a[class*="bg-orange-"],
+a[class*="bg-emerald-"],
+a[class*="bg-green-"] {
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        background-color 0.22s ease,
+        border-color 0.22s ease;
+}
+
+/* Shadow lembut dan efek terangkat */
+button:hover,
+.btn:hover,
+.vt-register:hover,
+.wa-button:hover,
+a[class*="bg-orange-"]:hover,
+a[class*="bg-emerald-"]:hover,
+a[class*="bg-green-"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.13);
+}
+
+/* Saat tombol ditekan */
+button:active,
+.btn:active,
+.vt-register:active,
+.wa-button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.10);
+}
+
+/* Fokus keyboard tetap terlihat */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(16, 185, 129, 0.45);
+    outline-offset: 4px;
+}
+
+/* Kartu program dan kartu informasi */
+.activity-card,
+.program-card,
+.faq-item,
+.path-card {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.activity-card:hover,
+.program-card:hover,
+.path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.09);
+    border-color: #a7f3d0;
+}
+
+/* Gerakan lebih sederhana jika diminta perangkat pengguna */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== BERANDA: CTA MODERN ===== */
+
+.vt-home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 22px;
+    border: 1px solid transparent;
+    border-radius: 13px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        background-color 220ms ease,
+        border-color 220ms ease;
+
+    will-change: transform;
+}
+
+/* Tombol oranye */
+.vt-home-btn-primary {
+    color: #ffffff;
+    background: #f97316;
+    box-shadow: 0 6px 14px rgba(249, 115, 22, 0.22);
+}
+
+.vt-home-btn-primary:hover {
+    color: #ffffff;
+    background: #ea580c;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.32);
+}
+
+.vt-home-btn-primary span {
+    display: inline-block;
+    transition: transform 220ms ease;
+}
+
+.vt-home-btn-primary:hover span {
+    transform: translateX(4px);
+}
+
+/* Tombol putih */
+.vt-home-btn-secondary {
+    color: #047857;
+    background: #ffffff;
+    border-color: #cce8d9;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.vt-home-btn-secondary:hover {
+    color: #065f46;
+    background: #f0fdf4;
+    border-color: #86efac;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(5, 150, 105, 0.13);
+}
+
+/* Efek ketika tombol ditekan */
+.vt-home-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Aksesibilitas */
+.vt-home-btn:focus-visible {
+    outline: 3px solid rgba(16, 185, 129, 0.45);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vt-home-btn,
+    .vt-home-btn span {
+        transition: none;
+    }
+}
+
+/* ===== VOLUNTRACK: PULSE CTA BUTTON ===== */
+
+.vt-home-btn-primary {
+    position: relative;
+    animation: vt-pulse-glow 2s ease-in-out infinite;
+    box-shadow:
+        0 0 12px rgba(249, 115, 22, 0.28),
+        0 6px 16px rgba(249, 115, 22, 0.20);
+}
+
+
+/* =====================================
+   VOLUNTRACK LOGIN PAGE
+===================================== */
+
+/* Penyesuaian layout login VolunTrack */
+.vt-login-page {
+    width: 100%;
+    min-height: auto;
+    display: block;
+    padding: 0;
+    background: transparent;
+}
+
+.vt-login-card {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+.vt-login-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.vt-login-form {
+    width: 100%;
+}
+
+.vt-field {
+    width: 100%;
+}
+
+.vt-field input {
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+}
+
+.vt-login-submit {
+    width: 100%;
+    min-height: 48px;
+}
